@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+// 1.Import useContext hook
+import React, { useState, useContext } from 'react';
+// 2. Import our context
+import { AppContext } from '../contexts/app_context';
 
-export const SignInForm = (props) => {
+export const SignInForm = () => {
+  // 3. Destructure our useCOntext
+  let {learners, setLearners} = useContext(AppContext)
   //States
   const [data, setData] = useState('');
 
@@ -11,7 +16,7 @@ export const SignInForm = (props) => {
   const handleSubmit = (event) => {
     //prevents page from reloading upon form submission
     event.preventDefault();
-    props.setLearners([...props.learners, data]);
+    setLearners([...learners, data]);
     setData('');
   };
 

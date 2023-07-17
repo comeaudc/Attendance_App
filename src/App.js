@@ -3,21 +3,19 @@ import './App.css';
 
 // -------Imports
 import { SignInForm } from './components/SignInForm';
-import { useState } from 'react';
+// import { useState } from 'react';
 import List from './components/List';
 import AttendanceCount from './components/AttendanceCount';
 
 function App() {
   // Learners state -- list of learners state
-  const [learners, setLearners] = useState([]);
-
-  const addTwo = () => {};
+  // const [learners, setLearners] = useState([]);
 
   return (
     <div className='App'>
-      <SignInForm setLearners={setLearners} learners={learners} />
-      <AttendanceCount learners={learners} />
-      <List addTwo={addTwo} learners={learners} />
+      <SignInForm  />
+      <AttendanceCount />
+      <List />
     </div>
   );
 }
